@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://473ecwn8jtje"]
+
+[ext_resource type="PackedScene" uid="uid://cn3ayrje54gut" path="res://dungeon assets/wall_doorway.glb" id="1_ote80"]
+
+[sub_resource type="Animation" id="Animation_nlqf5"]
+resource_name = "Open_Forward"
+
+[sub_resource type="Animation" id="Animation_q4x1x"]
+resource_name = "Open_Backward"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uk07x"]
+_data = {
+"Open_Backward": SubResource("Animation_q4x1x"),
+"Open_Forward": SubResource("Animation_nlqf5")
+}
+
+[node name="DoorUnit" type="Node3D"]
+
+[node name="wall_doorway2" parent="." instance=ExtResource("1_ote80")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wall_doorway2"]
+libraries = {
+"": SubResource("AnimationLibrary_uk07x")
+}
+
+[editable path="wall_doorway2"]
