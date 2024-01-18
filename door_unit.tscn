@@ -1,22 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://473ecwn8jtje"]
+[gd_scene load_steps=7 format=3 uid="uid://473ecwn8jtje"]
 
 [ext_resource type="PackedScene" uid="uid://cn3ayrje54gut" path="res://dungeon assets/wall_doorway.glb" id="1_ote80"]
-
-[sub_resource type="Animation" id="Animation_nlqf5"]
-resource_name = "Open_Forward"
+[ext_resource type="Script" path="res://door.gd" id="2_ad86w"]
 
 [sub_resource type="Animation" id="Animation_q4x1x"]
 resource_name = "Open_Backward"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall_doorway/wall_doorway_door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nlqf5"]
+resource_name = "Open_Forward"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall_doorway/wall_doorway_door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kfpw3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wall_doorway/wall_doorway_door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uk07x"]
 _data = {
 "Open_Backward": SubResource("Animation_q4x1x"),
-"Open_Forward": SubResource("Animation_nlqf5")
+"Open_Forward": SubResource("Animation_nlqf5"),
+"RESET": SubResource("Animation_kfpw3")
 }
 
 [node name="DoorUnit" type="Node3D"]
 
 [node name="wall_doorway2" parent="." instance=ExtResource("1_ote80")]
+
+[node name="StaticBody3D" parent="wall_doorway2/wall_doorway/wall_doorway_door" index="0" node_paths=PackedStringArray("animplayer") groups=["interactable"]]
+script = ExtResource("2_ad86w")
+animplayer = NodePath("../../../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="wall_doorway2"]
 libraries = {

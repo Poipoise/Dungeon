@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuh4lf6nqedcp"]
+[gd_scene load_steps=10 format=3 uid="uid://cuh4lf6nqedcp"]
 
 [ext_resource type="PackedScene" uid="uid://77dimix1rt40" path="res://dungeon assets/wall.gltf.glb" id="1_h7hh5"]
 [ext_resource type="Script" path="res://level_1.gd" id="1_lgwd5"]
 [ext_resource type="Texture2D" uid="uid://b3fspold2fm2c" path="res://buikslotermeerplein_2k.exr" id="2_1i1s7"]
 [ext_resource type="PackedScene" uid="uid://f22vsv6xakrt" path="res://dungeon assets/floor_tile_large.gltf.glb" id="2_tmkl2"]
 [ext_resource type="PackedScene" uid="uid://ci2twuhlgwrsm" path="res://knight.tscn" id="3_kgw31"]
+[ext_resource type="PackedScene" uid="uid://473ecwn8jtje" path="res://door_unit.tscn" id="6_2afou"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hkveu"]
 panorama = ExtResource("2_1i1s7")
@@ -228,7 +229,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -6)
 
 [node name="Node3D" parent="." instance=ExtResource("3_kgw31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -9.16833)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, -1, 8, -5)
@@ -236,3 +237,6 @@ light_energy = 10.6
 shadow_enabled = true
 spot_range = 14.0
 spot_angle = 15.0
+
+[node name="DoorUnit" parent="." instance=ExtResource("6_2afou")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.683, 0, -9.514)

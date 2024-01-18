@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal interacted_with
 @export var speed = 5.0
 @export var acceleration = 4.0
 @export var jump_speed = 8.0
@@ -28,6 +29,9 @@ func _physics_process(delta):
 		anim_state.travel("Jump_Idle")
 		$AnimationTree.set("parameters/conditions/grounded", false)
 		jumping = true
+	if Input.is_action_just_pressed("interact") && $Rig/RayCast3D.is_colliding():
+		if $Rig/RayCast3D.get_collider().is_in_group("interactable"):
+			$Rig/RayCast3D.get_collider().interacted()
 	
 	
 func get_move_input(delta):
@@ -44,4 +48,4 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		$SpringArm3D.rotation.y -= event.relative.x * mouse_sensitivity
 		$SpringArm3D.rotation.x -= event.relative.y * mouse_sensitivity
-		$SpringArm3D.rotation_degrees.x = clamp($SpringArm3D.rotation_degrees.x, -90.0, 30.0)
+		$SpringArm3D.rotation_degrees.x = clamp($SpringArm3D.rotation_degrees.x, -90.0, 30.0) 
