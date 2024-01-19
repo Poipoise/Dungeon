@@ -32,10 +32,12 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:wall_doorway": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 2
 },
 "PATH:wall_doorway/wall_doorway_door": {
-"generate/physics": true
+"generate/physics": true,
+"physics/shape_type": 2
 }
 }
 }
