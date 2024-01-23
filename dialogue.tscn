@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs4toh3m4tdxy"]
+
+[ext_resource type="Script" path="res://Dialogue.gd" id="1_ywm2o"]
+
+[node name="Dialogue" type="Node3D"]
+script = ExtResource("1_ywm2o")
+
+[node name="Label3D" type="Label3D" parent="."]
+
+[node name="next_char" type="Timer" parent="."]
+
+[node name="next_message" type="Timer" parent="."]
