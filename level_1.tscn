@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cuh4lf6nqedcp"]
+[gd_scene load_steps=20 format=3 uid="uid://cuh4lf6nqedcp"]
 
 [ext_resource type="PackedScene" uid="uid://77dimix1rt40" path="res://dungeon assets/wall.gltf.glb" id="1_h7hh5"]
 [ext_resource type="Script" path="res://level_1.gd" id="1_lgwd5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cvydbe41snhnj" path="res://dungeon assets/stairs_wood_decorated.gltf.glb" id="12_0ygro"]
 [ext_resource type="PackedScene" uid="uid://c8ntxed14u0tk" path="res://dungeon assets/trunk_large_C.gltf.glb" id="13_ywkrj"]
 [ext_resource type="PackedScene" uid="uid://bv8dfjgdp2j2v" path="res://chest.tscn" id="14_ndc53"]
+[ext_resource type="PackedScene" uid="uid://dcbaox3jjl0fo" path="res://rogue.tscn" id="15_0nkex"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_hkveu"]
 panorama = ExtResource("2_1i1s7")
@@ -360,5 +361,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -14)
 
 [node name="Chest" parent="." instance=ExtResource("14_ndc53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -14)
+
+[node name="Node3D2" parent="." instance=ExtResource("15_0nkex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15)
 
 [editable path="stairs_wood_decorated_gltf"]

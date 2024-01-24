@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Rogue.glb-a13f42aa2346658a9aa8ffa64e9ec935.sc
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
