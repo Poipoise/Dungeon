@@ -32,7 +32,7 @@ func _on_next_char_timeout():
 		var next_char = messages[current_message][current_char]
 		display += next_char
 		
-		$Label.text = display
+		$Dialogue.text = display
 		current_char += 1
 	else:
 		$next_char.stop()

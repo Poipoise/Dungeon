@@ -85,17 +85,21 @@ transform = Transform3D(0.999999, 6.27658e-07, -9.89199e-07, -1.02051e-06, -1.18
 visible = false
 
 [node name="Rogue_Cape" parent="Rogue/Rig/Skeleton3D" index="5"]
-transform = Transform3D(1, 1.25214e-21, -5.0822e-21, -1.25214e-21, 1, 4.30479e-42, 5.0822e-21, 1.43493e-42, 1, 0, 1.21587, 0)
+transform = Transform3D(1, 1.25214e-21, -5.0822e-21, -1.25214e-21, 1, 0, 5.0822e-21, 0, 1, 0, 1.21587, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rogue" groups=["interactable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02785, 0)
 shape = SubResource("CapsuleShape3D_dq83y")
 
-[node name="Label3D" type="Label3D" parent="Rogue"]
+[node name="Dialogue" type="Label3D" parent="Rogue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48598, 0)
+billboard = 1
 
 [node name="next_char" type="Timer" parent="Rogue"]
 
 [node name="next_message" type="Timer" parent="Rogue"]
+
+[connection signal="timeout" from="Rogue/next_char" to="Rogue" method="_on_next_char_timeout"]
+[connection signal="timeout" from="Rogue/next_message" to="Rogue" method="_on_next_message_timeout"]
 
 [editable path="Rogue"]
